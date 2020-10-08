@@ -14,14 +14,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var trueButton: UIButton!
     @IBOutlet weak var falseButton: UIButton!
     
-    //Want more questions so need to add array.
+    //Want more questions so need to create array. Need answers to validate questions, so need to create 2D array.
     let quiz = [
-        "How many times has Arsenal won the FA Cup?",
-        "How many teams compete within the Premier League?",
-        "Which Premier League team is also known by the nickname 'Toffees'?"
+        ["Arsenal won the FA Cup 14 times.", "True"],
+        ["40 teams compete within the Premier League.", "False"],
+        ["Premier League team Burnley is also known by the nickname 'Toffees'.", "False"]
      ]
     
-    //variable to keep track of which q the user is currently reading
+    //variable to keep track of which question the user is currently reading.
     var questionNumber = 0
     
     override func viewDidLoad() {
@@ -31,12 +31,24 @@ class ViewController: UIViewController {
     }
 
     @IBAction func answerButtonPressed(_ sender: UIButton) {
+        
+        //This Constant has been created to check whether the user has pressed correct button/answer.
+        let userAnswer = sender.currentTitle //True, False
+        let actualAnswer = quiz[questionNumber][1]
+        
+        //Check to see if there chosen answer is correct.
+        if userAnswer == actualAnswer {
+            print("Correct!")
+        } else {
+            print("Incorrect!")
+        }
+        
         questionNumber += 1 //questionNumber = questionNumber + 1
         updateUI()
     }
     
     func updateUI() {
-        questionLabel.text = quiz[questionNumber]
+        questionLabel.text = quiz[questionNumber][0]
     }
     
 }
