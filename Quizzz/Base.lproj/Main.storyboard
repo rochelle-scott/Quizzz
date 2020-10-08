@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -15,19 +16,62 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background-Bubbles" translatesAutoresizingMaskIntoConstraints="NO" id="FJl-g4-X05">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="500" verticalCompressionResistancePriority="1000" image="Background-Bubbles" translatesAutoresizingMaskIntoConstraints="NO" id="FJl-g4-X05">
                                 <rect key="frame" x="0.0" y="794" width="414" height="102"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="102" id="Jqs-vk-9BV"/>
                                 </constraints>
                             </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="Id6-Uw-FfQ">
+                                <rect key="frame" x="20" y="44" width="374" height="818"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="1000" text="Question Text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SWG-TT-ah9">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="576"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Foj-BD-8p6">
+                                        <rect key="frame" x="0.0" y="600" width="374" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="Xhi-1C-6wO"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="True" backgroundImage="Rectangle">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kP8-DU-DgK">
+                                        <rect key="frame" x="0.0" y="704" width="374" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="AUO-cd-wov"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="False" backgroundImage="Rectangle">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="d7I-QW-cx5">
+                                        <rect key="frame" x="0.0" y="808" width="374" height="10"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="10" id="1oE-R1-WSX"/>
+                                        </constraints>
+                                        <color key="progressTintColor" systemColor="systemYellowColor"/>
+                                        <color key="trackTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </progressView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.34161094935476904" green="0.15336066232223539" blue="0.43188848350253806" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="FJl-g4-X05" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="750" id="5yA-oZ-TXD"/>
+                            <constraint firstAttribute="bottom" secondItem="FJl-g4-X05" secondAttribute="bottom" id="5yA-oZ-TXD"/>
+                            <constraint firstItem="Id6-Uw-FfQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="6Ot-et-lBu"/>
                             <constraint firstItem="FJl-g4-X05" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="FMa-Ft-yDT"/>
-                            <constraint firstItem="FJl-g4-X05" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gTQ-8S-PUB"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Id6-Uw-FfQ" secondAttribute="trailing" id="Gca-ks-667"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Id6-Uw-FfQ" secondAttribute="bottom" id="JyI-dd-KAl"/>
+                            <constraint firstItem="FJl-g4-X05" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="gTQ-8S-PUB"/>
+                            <constraint firstItem="Id6-Uw-FfQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="iOX-p9-nrm"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -38,5 +82,9 @@
     </scenes>
     <resources>
         <image name="Background-Bubbles" width="352" height="102"/>
+        <image name="Rectangle" width="322" height="68"/>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>
