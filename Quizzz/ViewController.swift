@@ -43,8 +43,14 @@ class ViewController: UIViewController {
             print("Incorrect!")
         }
         
-        questionNumber += 1 //questionNumber = questionNumber + 1
-        updateUI()
+        
+        if questionNumber + 1 < quiz.count {
+            questionNumber += 1 //questionNumber = questionNumber + 1
+        } else {
+            questionNumber = 0 // this will fetch first question again. It allows to loop.
+        }
+          updateUI()
+        
     }
     
     func updateUI() {
