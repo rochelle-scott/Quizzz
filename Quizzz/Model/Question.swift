@@ -2,7 +2,7 @@
 //  Question.swift
 //  Quizzz
 //
-//  Created by Sylvia Urbaniak on 10/10/2020.
+//  Created by Rochelle Scott on 10/10/2020.
 //
 
 import Foundation
